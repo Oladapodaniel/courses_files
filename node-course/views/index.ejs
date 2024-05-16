@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+<body>
+    <% const name = 'dapo' %>
+    <h1>Node Application</h1>
+    <p>This is a basic node application</p>
+    <%- include('./partials/nav.ejs') %>
+    <section>
+        <div><%= name %></div>
+        <% if (blogs.length > 0) { %>
+            <% blogs.forEach(i => { %>
+                <a class="single" href="blogs/<%= i._id %>">
+                <h3 class="title"><%= i.title %></h3>
+                <p class="snippet"><%= i.snippet %></p>
+                </a>
+            <% }) %>
+        <% } else { %>
+            <p>There are n data t render</p>
+        <% } %>
+    </section>
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>
